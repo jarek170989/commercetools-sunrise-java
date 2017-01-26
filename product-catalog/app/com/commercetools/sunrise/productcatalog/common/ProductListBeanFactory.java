@@ -1,5 +1,6 @@
 package com.commercetools.sunrise.productcatalog.common;
 
+import com.commercetools.sunrise.common.categorytree.RefreshableCategoryTree;
 import io.sphere.sdk.categories.CategoryTree;
 import io.sphere.sdk.models.Base;
 import io.sphere.sdk.products.ProductProjection;
@@ -15,7 +16,7 @@ public class ProductListBeanFactory extends Base {
 
     @Inject
     @Named("new")
-    private CategoryTree categoryTreeInNew;
+    private RefreshableCategoryTree categoryTreeInNew;
     @Inject
     private ProductBeanFactory productBeanFactory;
 
