@@ -9,10 +9,7 @@ import io.sphere.sdk.models.Identifiable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Locale;
-import java.util.Optional;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 import static io.sphere.sdk.client.SphereClientUtils.blockingWait;
@@ -103,5 +100,9 @@ public final class RefreshableCategoryTree extends Base implements CategoryTree 
         return categories.stream()
                 .sorted(new ByOrderHintCategoryComparator())
                 .collect(toList());
+    }
+
+    public void refreshWithEmptyList() {
+        this.categoryTree = CategoryTree.of(new ArrayList<Category>());
     }
 }

@@ -14,6 +14,7 @@ public class CategoriesRefreshController extends Controller {
     public Result refresh() {
         if (categoryTree instanceof RefreshableCategoryTree) {
             ((RefreshableCategoryTree) categoryTree).refresh();
+            ((RefreshableCategoryTree) categoryTree).refreshWithEmptyList();
             return ok("Fetched " + categoryTree.getAllAsFlatList().size() + " categories");
         } else 
         throw new RuntimeException("Not found refreshable category tree");
